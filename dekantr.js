@@ -2,6 +2,8 @@
 function dekantrPrime() {
     "use strict";
     
+    this.path = "/modules/";
+    
     this.buffer = null;
     
     this.html = null; // root DOM element to hold in dekantr object for easy reference, this could really be anything, i.e. the best way to access the document
@@ -14,41 +16,41 @@ function dekantrPrime() {
         
     };
     
-    this.dekant = function(targetNode) { // this will be the method that "dekants" the retrieved and build modular content into the site's DOM
+    this.dekant = function() { // this will be the method that "dekants" the retrieved and build modular content into the site's DOM
+    
+        let nodes = document.querySelectorAll("[data-dekantr-module]");
         
-        targetNode = document.getElementById(targetNode);
-        
-        let url = targetNode.getAttribute("data-dekantr-module") + ".html",
-        
-        r = new XMLHttpRequest();
-        
-        r.responseType = "document";
-        
-        r.overrideMimeType('text/xml');
-        
-        r.open("get", url);
-        
-        r.onload = function () {
+        for (let n = 0; n < nodes.length; ++n) {
             
-            if (r.readyState === r.DONE) {
+            let url = this.path + nodes[n].getAttribute("data-dekantr-module") + ".html",
+        
+            r = new XMLHttpRequest();
+            
+            r.responseType = "document";
+            
+            r.overrideMimeType('text/xml');
+            
+            r.open("get", url);
+            
+            r.onload = function () {
                 
-                if (r.status === 200) {
+                if (r.readyState === r.DONE) {
                     
-                    console.log(r);
-                    
-                    var injectable = r.responseXML.getElementsByTagName("body")[0].innerHTML;
-                    
-                    console.log(injectable);
-                    
-                    targetNode.innerHTML = injectable;
+                    if (r.status === 200) {
+                        
+                        var injectable = r.responseXML.getElementsByTagName("body")[0].innerHTML;
+                        
+                        nodes[n].innerHTML = injectable;
+                        
+                    }
                     
                 }
                 
-            }
+            };
             
-        };
-        
-        r.send(null);
+            r.send(null);
+            
+        }
 
     };
     

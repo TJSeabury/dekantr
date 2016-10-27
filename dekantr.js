@@ -118,6 +118,8 @@ let tachymeter = {
 };
 
 tachymeter.tick();
+
+
 let el = document.querySelectorAll("#testbed.dekantr-loading-iostream")[0],
 content = window.getComputedStyle(el, ":after").getPropertyValue("content");
 

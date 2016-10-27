@@ -22,9 +22,11 @@ function dekantrPrime() {
         
         for (let n = 0; n < nodes.length; ++n) {
             
+            nodes[n].classList.add("dekantr-loading-iostream");
+            
             let url = this.path + nodes[n].getAttribute("data-dekantr-module") + ".html",
         
-            r = new XMLHttpRequest();
+            r = new XMLHttpRequest(); // where r is request.
             
             r.responseType = "document";
             
@@ -38,9 +40,12 @@ function dekantrPrime() {
                     
                     if (r.status === 200) {
                         
-                        var injectable = r.responseXML.getElementsByTagName("body")[0].innerHTML;
+                        var injectable = r.responseXML.getElementsByTagName("body")[0].innerHTML; // where injectable is the desired html content.
                         
-                        nodes[n].innerHTML = injectable;
+                        setTimeout( () => {
+                            nodes[n].innerHTML = injectable;
+                            nodes[n].classList.remove("dekantr-loading-iostream");
+                        }, Math.floor((Math.random() * 1000) * 2 + 1000));
                         
                     }
                     
@@ -57,3 +62,75 @@ function dekantrPrime() {
 }
 
 var dekantr = new dekantrPrime();
+
+//
+// http://stackoverflow.com/questions/102605/can-i-perform-a-dns-lookup-hostname-to-ip-address-using-client-side-javascript/25962226#25962226
+//
+// explore this code later
+//
+
+let tachymeter = {
+    
+    then: Date.now(),
+    now: null,
+    interval: 1000 / 60,
+    delta: null,
+    fps: 60,
+    frame: 0,
+     
+    tick: function() {
+        
+        this.now = Date.now();
+        this.delta = this.now - this.then;
+        this.fps = this.truncate((1 / this.delta) * 1000, 1);
+        this.frame++;
+         
+        if (this.delta > this.interval) {
+            
+            this.then = this.now - (this.delta % this.interval);
+            
+            if ( this.frame >= 10 ) {
+                this.updateDisplay();
+                this.frame = 0;
+            }
+            
+            // add more code here
+            
+        }
+        
+        window.requestAnimationFrame(tachymeter.tick.bind(tachymeter));
+        
+    },
+    
+    updateDisplay: function() {
+        
+        let fpsDisplay = document.getElementById("fps");
+        
+        fpsDisplay.innerHTML = "FPS: " + this.fps;
+        
+    },
+    
+    truncate: function floorFigure(figure, decimals){
+        if (!decimals) decimals = 2;
+        var d = Math.pow(10,decimals);
+        return (parseInt(figure*d)/d).toFixed(decimals);
+    }
+};
+
+tachymeter.tick();
+let el = document.querySelectorAll("#testbed.dekantr-loading-iostream")[0],
+content = window.getComputedStyle(el, ":after").getPropertyValue("content");
+
+
+let groupPixelWidth = (((content.length + 1) * 10) / ((content.length + 1) / 9));
+console.log(groupPixelWidth);
+
+let width = 90;
+console.log(width);
+
+let visibleGroups = width / groupPixelWidth;
+console.log(visibleGroups);
+
+let ppf = (((content.length + 1) * 10) / 90) / 60;
+let t = width / ppf;
+console.log("v: " + ppf + " t: " + t + "s");

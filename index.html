@@ -3,13 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>Dekantr</title>
-        <link href="/css/main.css"/>
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+        <link rel="stylesheet" href="css/dekantr-loading.css" type="text/css" />
     </head>
     <body>
+        <span style="position: fixed; color: #fff; z-index: 9999; background-color: #242442; padding: 5px;" id="fps">0</span>
+        <header>
+            <h1><strong>Dekantr Development Platform</strong></h1>
+            <h2><em>Promptly filling your flagon.</em></h2>
+        </header>
         <main>
-            <div id="one" data-dekantr-module="test"></div>
-            <div id="two" data-dekantr-module="test1"></div>
+            <section>
+                <div id="one" class="" data-dekantr-module="test"></div>
+                <div id="testbed"class="dekantr-loading-iostream"></div>
+                <div id="two" class="" data-dekantr-module="test1"></div>
+            </section>
+            <section>
+                <div id="three" class="" data-dekantr-module="test"></div>
+                <div class="dekantr-loading-iostream"></div>
+                <div id="four" class="" data-dekantr-module="test1"></div>
+            </section>
+            <section>
+                <div id="five" class="" data-dekantr-module="test"></div>
+                <div class="dekantr-loading-iostream"></div>
+                <div id="six" class="" data-dekantr-module="test1"></div>
+            </section>
         </main>
+        <footer>
+            <h4>&copy Dekantr 2016<h4>
+        </footer>
         <script src="dekantr.js"></script>
         <script>
             (function(){

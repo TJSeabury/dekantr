@@ -94,7 +94,66 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   
+html {
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    min-height: 100vh;
+    height: 100%;
+    background-color: #424242;
+    box-sizing: border-box;
+}
 
+body {
+    position: relative;
+    color: #fff;
+    margin: 0;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+header,
+main,
+section,
+article,
+footer {
+    padding: 1em;
+}
+
+header {
+    background-color: #242424;
+    text-align: right;
+}
+
+footer {
+    width: 100%;
+    background-color: #242424;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #11aaee;
+    animation: colorshift;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    box-sizing: border-box;
+}
 
 
 

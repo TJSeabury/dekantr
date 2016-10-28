@@ -1,7 +1,6 @@
 
 function Dekantr() {
     "use strict";
-    
     this.path = "/modules/";
     this.buffer = null;
     this.html = null; // root DOM element to hold in dekantr object for easy reference, this could really be anything, i.e. the best way to access the document
@@ -32,8 +31,16 @@ function Dekantr() {
             r.send(null);
         }
     };
-}
 
+    this.load = function(fu) {
+        if (window.addEventListener)  // W3C DOM
+            window.addEventListener('load', fu, false);
+        else if (window.attachEvent) { // IE DOM
+            return window.attachEvent('onload', fu);
+        }
+        else console.log('I\'m sorry Dave, I\'m afraid I can\'t do that.');
+    }
+}
 var dekantr = new Dekantr();
 
 //

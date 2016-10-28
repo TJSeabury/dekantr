@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Dekantr</title>
-        <link rel="stylesheet" href="css/main.css" type="text/css" />
-        <link rel="stylesheet" href="css/dekantr-loading.css" type="text/css" />
+        <link rel="stylesheet" href="dekantr/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="dekantr/css/dekantr-loading.css" type="text/css" />
     </head>
     <body>
         <span style="position: fixed; color: #fff; z-index: 9999; background-color: #242442; padding: 5px;" id="fps">0</span>
@@ -15,7 +15,7 @@
         <main>
             <section>
                 <div id="one" class="" data-dekantr-module="test"></div>
-                <div id="testbed"class="dekantr-loading-iostream"></div>
+                <div id="testbed" class="dekantr-loading-iostream"></div>
                 <div id="two" class="" data-dekantr-module="test1"></div>
             </section>
             <section>
@@ -30,14 +30,13 @@
             </section>
         </main>
         <footer>
-            <h4>&copy Dekantr 2016<h4>
+            <h4>&copy Dekantr 2016</h4>
         </footer>
         <script src="dekantr.js"></script>
         <script>
-            (function(){
-             /*global dekantr*/
+            (function(dekantr){
              dekantr.dekant();
-            }());
+            }(dekantr));
         </script>
     </body>
 </html>

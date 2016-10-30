@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Dekantr</title>
-        <link rel="stylesheet" href="dekantr/css/main.css" type="text/css" />
-        <link rel="stylesheet" href="dekantr/css/dekantr-loading.css" type="text/css" />
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+        <link rel="stylesheet" href="css/dekantr-loading.css" type="text/css" />
     </head>
     <body>
-        <span style="position: fixed; color: #fff; z-index: 9999; background-color: #242442; padding: 5px;" id="fps">0</span>
+        <!--<span style="position: fixed; color: #fff; z-index: 9999; background-color: #242442; padding: 5px;" id="fps">0</span>-->
         <header>
             <h1><strong>Dekantr Development Platform</strong></h1>
             <h2><em>Promptly filling your flagon.</em></h2>
@@ -35,7 +35,8 @@
         <script src="dekantr.js"></script>
         <script>
             (function(dekantr){
-             dekantr.dekant();
+                dekantr.dekant();
+                //dekantr.tachymeter.tick();
             }(dekantr));
         </script>
     </body>

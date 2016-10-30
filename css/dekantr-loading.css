@@ -1,32 +1,3 @@
-/*.dekantr-loading-square {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 250px;
-    background-color: #116699;
-    perspective: 200px;
-    perspective-origin: center;
-}
-
-.dekantr-loading-square:after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 5vw;
-    height: 5vw;
-    margin: 0;
-    padding: 0;
-    top: calc(50% - (5vw / 2));
-    left: calc(50% - (5vw / 2));
-    background-color: #fff;
-    animation: flipflip;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    z-index: 100;
-}*/
-
 .dekantr-loading-iostream {
     position: relative;
     margin: 0;

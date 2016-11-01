@@ -1,94 +1,41 @@
-section {
+.one, .two, .three, .four, .five,
+.six, .seven, .eight, .nine, .ten {
     display: flex;
-    margin: 2px 0;
 }
-
-.one {}
+.one > *, .two > *, .three > *, .four > *, .five > *,
+.six > *, .seven > *, .eight > *, .nine > *, .ten > * {
+    box-sizing: border-box;
+    margin: 1px;
+    min-height: 9vh;
+    background-color: #116699;
+}
 .one > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 1);
-    background-color: #116699;
 }
-
-.two {}
 .two > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 2);
-    background-color: #116699;
 }
-
-.three {}
 .three > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 3);
-    background-color: #116699;
 }
-
-.four {}
 .four > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 4);
-    background-color: #116699;
 }
-
-.five {}
 .five > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 5);
-    background-color: #116699;
 }
-
-.six {}
 .six > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 6);
-    background-color: #116699;
 }
-
-.seven {}
 .seven > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 7);
-    background-color: #116699;
 }
-
-.eight {}
 .eight > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 8);
-    background-color: #116699;
 }
-
-.nine {}
 .nine > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 9);
-    background-color: #116699;
 }
-
-.ten {}
 .ten > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
     width: calc(100% / 10);
-    background-color: #116699;
 }

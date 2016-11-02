@@ -1,10 +1,5 @@
 @media screen and (min-width: 1px) {
-    * {
-        font-size: 10px;
-    }
-    html, body {
-        margin: 0;
-        padding: 0;
+    body {
         counter-reset: section;
     }
     .one, .two, .three, .four, .five,

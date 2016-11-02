@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
     animation-iteration-count: infinite;
 }
 
-main {
+.platter {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -148,7 +148,7 @@ main {
     box-sizing: border-box;
 }
 
-section {
+.flagon {
     display: flex;
     align-items: stretch;
     height: 100%;

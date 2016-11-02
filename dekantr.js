@@ -104,6 +104,9 @@ function Dekantr() {
 }
 var dekantr = new Dekantr();
 
+// useful snippet; integrate it
+// var scrollTop = pageYOffset || (document.documentElement.clientHeight ? document.documentElement.scrollTop : document.body.scrollTop);
+
 //
 // http://stackoverflow.com/questions/102605/can-i-perform-a-dns-lookup-hostname-to-ip-address-using-client-side-javascript/25962226#25962226
 //

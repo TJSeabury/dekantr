@@ -1,41 +1,167 @@
-.one, .two, .three, .four, .five,
-.six, .seven, .eight, .nine, .ten {
-    display: flex;
+@media screen and (min-width: 1px) {
+    * {
+        font-size: 10px;
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
+        counter-reset: section;
+    }
+    .one, .two, .three, .four, .five,
+    .six, .seven, .eight, .nine, .ten {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        counter-reset: col;
+        counter-increment: section;
+    }
+    .one > *, .two > *, .three > *, .four > *, .five > *,
+    .six > *, .seven > *, .eight > *, .nine > *, .ten > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        flex-basis: calc(100% / 1);
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #ff7700;
+    }
+    /* rules for visualization in development only */
+    .one > *:after, .two > *:after, .three > *:after, .four > *:after, .five > *:after,
+    .six > *:after, .seven > *:after, .eight > *:after, .nine > *:after, .ten > *:after {
+        position: absolute;
+        display: block;
+        width: calc(100% - 2em);
+        text-align: center;
+        font-size: 1em;
+        top: calc(50% - 0.5em);
+        color: white;
+        font-family: "DejaVu Sans";
+        counter-increment: col;
+        content: "Sec " counter(section) " : Col " counter(col) "";
+    }
 }
-.one > *, .two > *, .three > *, .four > *, .five > *,
-.six > *, .seven > *, .eight > *, .nine > *, .ten > * {
-    box-sizing: border-box;
-    margin: 1px;
-    min-height: 9vh;
-    background-color: #116699;
+
+@media screen and (min-width: 360px) {
+    .one > * {
+        flex-basis: calc(100% / 1);
+    }
+    .two > * {
+        flex-basis: calc(100% / 1);
+    }
+    .three > * {
+        flex-basis: calc(100% / 1);
+    }
+    .four > * {
+        flex-basis: calc(100% / 1);
+    }
+    .five > * {
+        flex-basis: calc(100% / 1);
+    }
+    .six > * {
+        flex-basis: calc(100% / 2);
+    }
+    .seven > * {
+        flex-basis: calc(100% / 2);
+        flex-grow: 2;
+    }
+    .eight > * {
+        flex-basis: calc(100% / 2);
+    }
+    .nine > * {
+        flex-basis: calc(100% / 2);
+        flex-grow: 2;
+    }
+    .ten > * {
+        flex-basis: calc(100% / 2);
+    }
 }
-.one > * {
-    width: calc(100% / 1);
+
+@media screen and (min-width: 640px) {
+    .one > * {
+        flex-basis: calc(100% / 1);
+    }
+    .two > * {
+        flex-basis: calc(100% / 2);
+    }
+    .three > * {
+        flex-basis: calc(100% / 3);
+    }
+    .four > * {
+        flex-basis: calc(100% / 2);
+    }
+    .five > * {
+        flex-basis: calc(100% / 3);
+        flex-grow: 2;
+    }
+    .six > * {
+        flex-basis: calc(100% / 3);
+    }
+    .seven > * {
+        flex-basis: calc(100% / 4);
+        flex-grow: 2;
+    }
+    .eight > * {
+        flex-basis: calc(100% / 4);
+    }
+    .nine > * {
+        flex-basis: calc(100% / 3);
+    }
+    .ten > * {
+        flex-basis: calc(100% / 5);
+    }
 }
-.two > * {
-    width: calc(100% / 2);
+
+@media screen and (min-width: 1024px) {
+    .one > * {
+        flex-basis: calc(100% / 1);
+    }
+    .two > * {
+        flex-basis: calc(100% / 2);
+    }
+    .three > * {
+        flex-basis: calc(100% / 3);
+    }
+    .four > * {
+        flex-basis: calc(100% / 4);
+    }
+    .five > * {
+        flex-basis: calc(100% / 5);
+    }
+    .six > * {
+        flex-basis: calc(100% / 6);
+    }
+    .seven > * {
+        flex-basis: calc(100% / 7);
+    }
+    .eight > * {
+        flex-basis: calc(100% / 8);
+    }
+    .nine > * {
+        flex-basis: calc(100% / 9);
+    }
+    .ten > * {
+        flex-basis: calc(100% / 10);
+    }
 }
-.three > * {
-    width: calc(100% / 3);
+
+@media screen and (min-width: 1440px) {
+    /* rules for visualization in development only */
+    .one > *:after, .two > *:after, .three > *:after, .four > *:after, .five > *:after,
+    .six > *:after, .seven > *:after, .eight > *:after, .nine > *:after, .ten > *:after {
+        font-size: 1.125em;
+    }
 }
-.four > * {
-    width: calc(100% / 4);
-}
-.five > * {
-    width: calc(100% / 5);
-}
-.six > * {
-    width: calc(100% / 6);
-}
-.seven > * {
-    width: calc(100% / 7);
-}
-.eight > * {
-    width: calc(100% / 8);
-}
-.nine > * {
-    width: calc(100% / 9);
-}
-.ten > * {
-    width: calc(100% / 10);
+
+@media screen and (min-width: 1920px) {
+    /* rules for visualization in development only */
+    .one > *:after, .two > *:after, .three > *:after, .four > *:after, .five > *:after,
+    .six > *:after, .seven > *:after, .eight > *:after, .nine > *:after, .ten > *:after {
+        font-size: 1.25em;
+    }
 }

@@ -9,10 +9,9 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
 html {
     color: #222;
-    font-size: 1em;
+    font-size: 10px;
     line-height: 1.4;
 }
 
@@ -23,12 +22,10 @@ html {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
 }
-
 ::selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -37,12 +34,11 @@ html {
 /*
  * A better looking default horizontal rule
  */
-
 hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #11aaee;
     margin: 1em 0;
     padding: 0;
 }
@@ -52,7 +48,6 @@ hr {
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
-
 audio,
 canvas,
 iframe,
@@ -65,7 +60,6 @@ video {
 /*
  * Remove default fieldset styles.
  */
-
 fieldset {
     border: 0;
     margin: 0;
@@ -75,7 +69,6 @@ fieldset {
 /*
  * Allow only vertical resizing of textareas.
  */
-
 textarea {
     resize: vertical;
 }
@@ -83,7 +76,6 @@ textarea {
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
-
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
@@ -92,7 +84,7 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Layout
    ========================================================================== */
    
 html {
@@ -128,16 +120,8 @@ header {
 footer {
     width: 100%;
     background-color: #242424;
-    text-align: right;
+    text-align: center;
     box-sizing: border-box;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #11aaee;
-    animation: colorshift;
-    animation-duration: 15s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
 .platter {
@@ -155,20 +139,29 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
 }
 
+/* ==========================================================================
+   Typography
+   ========================================================================== */
 
+h1 { font-size: 2.0em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1.0em; }
+p, a, pre, code, span {
+    font-size: 1.0em;
+    color: #11aaee;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+body {
+    color: #11aaee;
+    border-color: #11aaee;
+    animation: colorshift;
+    animation-duration: 15s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
 
 /* ==========================================================================
    Helper classes
@@ -177,7 +170,6 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Hide visually and from screen readers
  */
-
 .hidden {
     display: none !important;
 }
@@ -186,7 +178,6 @@ h1, h2, h3, h4, h5, h6 {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -203,7 +194,6 @@ h1, h2, h3, h4, h5, h6 {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     clip: auto;
@@ -217,7 +207,6 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-
 .invisible {
     visibility: hidden;
 }
@@ -233,32 +222,13 @@ h1, h2, h3, h4, h5, h6 {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-
 .clearfix:before,
 .clearfix:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
-
 .clearfix:after {
     clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================

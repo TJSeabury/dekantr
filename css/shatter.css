@@ -24,7 +24,7 @@
         min-height: calc(100vh / 10);
         background-clip: content-box;
         background-color: #242424;
-        border: 1px solid #ff7700;
+        border: 1px solid #11aaee;
     }
     /* rules for visualization in development only */
     .one > *:after, .two > *:after, .three > *:after, .four > *:after, .five > *:after,
@@ -32,10 +32,9 @@
         position: absolute;
         display: block;
         width: calc(100% - 2em);
-        text-align: center;
         font-size: 1em;
-        top: calc(50% - 0.5em);
-        color: white;
+        top: 0.5em;
+        left: 1em;
         font-family: "DejaVu Sans", Arial, sans-serif;
         counter-increment: col;
         content: "Sec " counter(section) " : Col " counter(col) "";

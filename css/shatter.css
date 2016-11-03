@@ -15,14 +15,14 @@
         justify-content: center;
         margin: 0;
         padding: 0;
+        /* styles for visualization in development only */
+        counter-reset: col;
+        counter-increment: section;
     }
 
     /***********************************************
     Helper Styles
     ************************************************/
-    .shatter_vcenter-inline {
-        position: relative;
-    }
     .shatter_vcenter-inline > * {
         position: relative;
         display: block;
@@ -60,6 +60,18 @@
     /* rules for visualization in development only */
     .one > *:after, .two > *:after, .three > *:after, .four > *:after, .five > *:after,
     .six > *:after, .seven > *:after, .eight > *:after, .nine > *:after, .ten > *:after {
+        position: absolute;
+        display: block;
+        width: calc(100% - 2em);
+        font-size: 1em;
+        top: 0.5em;
+        left: 1em;
+        font-family: "DejaVu Sans", Arial, sans-serif;
+        counter-increment: col;
+        content: "Sec " counter(section) " : Col " counter(col) "";
+    }
+
+    [class^="shatter_"] > *:after {
         position: absolute;
         display: block;
         width: calc(100% - 2em);
@@ -172,6 +184,26 @@
     }
     .shatter_25-50-25 > *:nth-child(2) {
         flex-basis: calc(100% / 2);
+    }
+
+    /* 30% 40% 30% */
+    .shatter_30-40-30 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_30-40-30 > *:nth-child(1),
+    .shatter_30-40-30 > *:nth-child(3) {
+        flex-basis: calc(100% / 3.33333333334);
+    }
+    .shatter_30-40-30 > *:nth-child(2) {
+        flex-basis: calc(100% / 2.5);
     }
 
 }

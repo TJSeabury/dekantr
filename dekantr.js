@@ -22,7 +22,7 @@ function Dekantr() {
                     setTimeout( () => {
                         nodes[n].innerHTML = r.responseXML.getElementsByTagName("body")[0].innerHTML;
                         nodes[n].classList.remove("dekantr-loading");
-                    }, 1 /*Math.floor((Math.random() * 1000) * 2 + 1000)*/);
+                    }, Math.floor((Math.random() * 1000) * 2 + 1000));
                 }
             };
             r.send(null);

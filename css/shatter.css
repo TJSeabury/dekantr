@@ -1,7 +1,37 @@
 @media screen and (min-width: 1px) {
+    /***********************************************
+    Defaults and Resets
+    ************************************************/
     body {
+        /* styles for visualization in development only */
         counter-reset: section;
     }
+
+    /* flex row container */
+    [class^="shatter_"] {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    /***********************************************
+    Helper Styles
+    ************************************************/
+    .shatter_vcenter-inline {
+        position: relative;
+    }
+    .shatter_vcenter-inline > * {
+        position: relative;
+        display: block;
+        top: calc(50% - 0.5em);
+    }
+
+    /***********************************************
+    Equal Columns
+    ************************************************/
     .one, .two, .three, .four, .five,
     .six, .seven, .eight, .nine, .ten {
         position: relative;
@@ -10,6 +40,7 @@
         justify-content: center;
         margin: 0;
         padding: 0;
+        /* styles for visualization in development only */
         counter-reset: col;
         counter-increment: section;
     }
@@ -39,6 +70,110 @@
         counter-increment: col;
         content: "Sec " counter(section) " : Col " counter(col) "";
     }
+
+    /***********************************************
+    Variable Columns : 3
+    ************************************************/
+    /* 5% 90% 5% */
+    .shatter_5-90-5 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_5-90-5 > *:nth-child(1),
+    .shatter_5-90-5 > *:nth-child(3) {
+        flex-basis: calc(100% / 20);
+    }
+    .shatter_5-90-5 > *:nth-child(2) {
+        flex-basis: calc(100% / 1.1111111111);
+    }
+
+    /* 10% 80% 10% */
+    .shatter_10-80-10 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_10-80-10 > *:nth-child(1),
+    .shatter_10-80-10 > *:nth-child(3) {
+        flex-basis: calc(100% / 10);
+    }
+    .shatter_10-80-10 > *:nth-child(2) {
+        flex-basis: calc(100% / 1.25);
+    }
+
+    /* 15% 70% 15% */
+    .shatter_15-70-15 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_15-70-15 > *:nth-child(1),
+    .shatter_15-70-15 > *:nth-child(3) {
+        flex-basis: calc(100% / 6.6666666667);
+    }
+    .shatter_15-70-15 > *:nth-child(2) {
+        flex-basis: calc(100% / 1.42857142858);
+    }
+
+    /* 20% 60% 20% */
+    .shatter_20-60-20 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_20-60-20 > *:nth-child(1),
+    .shatter_20-60-20 > *:nth-child(3) {
+        flex-basis: calc(100% / 5);
+    }
+    .shatter_20-60-20 > *:nth-child(2) {
+        flex-basis: calc(100% / 1.6666667);
+    }
+
+    /* 25% 50% 25% */
+    .shatter_25-50-25 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_25-50-25 > *:nth-child(1),
+    .shatter_25-50-25 > *:nth-child(3) {
+        flex-basis: calc(100% / 4);
+    }
+    .shatter_25-50-25 > *:nth-child(2) {
+        flex-basis: calc(100% / 2);
+    }
+
 }
 
 @media screen and (min-width: 360px) {

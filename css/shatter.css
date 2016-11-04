@@ -20,6 +20,19 @@
         counter-increment: section;
     }
 
+    /* flex row global styles */
+    [class^="shatter_"] > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+
     /***********************************************
     Helper Styles
     ************************************************/
@@ -88,17 +101,6 @@
     Variable Columns : 2
     ************************************************/
     /* 10% 90% */
-    .shatter_10-90 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_10-90 > *:nth-child(1) {
         flex-basis: calc(100% / 10);
     }
@@ -107,17 +109,6 @@
     }
 
     /* 20% 80% */
-    .shatter_20-80 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_20-80 > *:nth-child(1) {
         flex-basis: calc(100% / 5);
     }
@@ -126,17 +117,6 @@
     }
 
     /* 30% 70% */
-    .shatter_30-70 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_30-70 > *:nth-child(1) {
         flex-basis: calc(100% / 3.33333333334);
     }
@@ -145,17 +125,6 @@
     }
 
     /* 40% 60% */
-    .shatter_40-60 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_40-60 > *:nth-child(1) {
         flex-basis: calc(100% / 2.5);
     }
@@ -164,17 +133,6 @@
     }
 
     /* 50% 50% */
-    .shatter_50-50 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_50-50 > *:nth-child(1) {
         flex-basis: calc(100% / 2.0);
     }
@@ -183,17 +141,6 @@
     }
 
     /* 60% 40% */
-    .shatter_60-40 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_60-40 > *:nth-child(1) {
         flex-basis: calc(100% / 1.6666666667);
     }
@@ -202,17 +149,6 @@
     }
 
     /* 70% 30% */
-    .shatter_70-30 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_70-30 > *:nth-child(1) {
         flex-basis: calc(100% / 1.42857142858);
     }
@@ -221,17 +157,6 @@
     }
 
     /* 80% 20% */
-    .shatter_80-20 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_80-20 > *:nth-child(1) {
         flex-basis: calc(100% / 1.25);
     }
@@ -240,17 +165,6 @@
     }
 
     /* 90% 10% */
-    .shatter_90-10 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_90-10 > *:nth-child(1) {
         flex-basis: calc(100% / 1.1111111111);
     }
@@ -262,17 +176,6 @@
     Variable Columns : 3
     ************************************************/
     /* 5% 90% 5% */
-    .shatter_5-90-5 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_5-90-5 > *:nth-child(1),
     .shatter_5-90-5 > *:nth-child(3) {
         flex-basis: calc(100% / 20);
@@ -282,17 +185,6 @@
     }
 
     /* 10% 80% 10% */
-    .shatter_10-80-10 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_10-80-10 > *:nth-child(1),
     .shatter_10-80-10 > *:nth-child(3) {
         flex-basis: calc(100% / 10);
@@ -302,17 +194,6 @@
     }
 
     /* 15% 70% 15% */
-    .shatter_15-70-15 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_15-70-15 > *:nth-child(1),
     .shatter_15-70-15 > *:nth-child(3) {
         flex-basis: calc(100% / 6.6666666667);
@@ -322,17 +203,6 @@
     }
 
     /* 20% 60% 20% */
-    .shatter_20-60-20 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_20-60-20 > *:nth-child(1),
     .shatter_20-60-20 > *:nth-child(3) {
         flex-basis: calc(100% / 5);
@@ -342,17 +212,6 @@
     }
 
     /* 25% 50% 25% */
-    .shatter_25-50-25 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_25-50-25 > *:nth-child(1),
     .shatter_25-50-25 > *:nth-child(3) {
         flex-basis: calc(100% / 4);
@@ -362,17 +221,6 @@
     }
 
     /* 30% 40% 30% */
-    .shatter_30-40-30 > * {
-        position: relative;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0.5em 1em;
-        /* styles for visualization in development only */
-        min-height: calc(100vh / 10);
-        background-clip: content-box;
-        background-color: #242424;
-        border: 1px solid #11aaee;
-    }
     .shatter_30-40-30 > *:nth-child(1),
     .shatter_30-40-30 > *:nth-child(3) {
         flex-basis: calc(100% / 3.33333333334);

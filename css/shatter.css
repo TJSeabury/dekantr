@@ -87,7 +87,6 @@
     /***********************************************
     Variable Columns : 2
     ************************************************/
-
     /* 10% 90% */
     .shatter_10-90 > * {
         position: relative;
@@ -238,6 +237,25 @@
     }
     .shatter_80-20 > *:nth-child(2) {
         flex-basis: calc(100% / 5);
+    }
+
+    /* 90% 10% */
+    .shatter_90-10 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_90-10 > *:nth-child(1) {
+        flex-basis: calc(100% / 1.1111111111);
+    }
+    .shatter_90-10 > *:nth-child(2) {
+        flex-basis: calc(100% / 10);
     }
 
     /***********************************************

@@ -202,6 +202,44 @@
         flex-basis: calc(100% / 2.5);
     }
 
+    /* 70% 30% */
+    .shatter_70-30 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_70-30 > *:nth-child(1) {
+        flex-basis: calc(100% / 1.42857142858);
+    }
+    .shatter_70-30 > *:nth-child(2) {
+        flex-basis: calc(100% / 3.33333333334);
+    }
+
+    /* 80% 20% */
+    .shatter_80-20 > * {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0.5em 1em;
+        /* styles for visualization in development only */
+        min-height: calc(100vh / 10);
+        background-clip: content-box;
+        background-color: #242424;
+        border: 1px solid #11aaee;
+    }
+    .shatter_80-20 > *:nth-child(1) {
+        flex-basis: calc(100% / 1.25);
+    }
+    .shatter_80-20 > *:nth-child(2) {
+        flex-basis: calc(100% / 5);
+    }
+
     /***********************************************
     Variable Columns : 3
     ************************************************/

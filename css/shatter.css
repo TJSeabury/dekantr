@@ -8,7 +8,7 @@
     }
 
     /* flex row container */
-    [class^="shatter_"] {
+    [class*="shatter_"] {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -21,7 +21,7 @@
     }
 
     /* flex row global styles */
-    [class^="shatter_"] > * {
+    [class*="shatter_"] > * {
         position: relative;
         box-sizing: border-box;
         margin: 0;
@@ -84,7 +84,7 @@
         content: "Sec " counter(section) " : Col " counter(col) "";
     }
 
-    [class^="shatter_"] > *:after {
+    [class*="shatter_"] > *:after {
         position: absolute;
         display: block;
         width: calc(100% - 2em);
@@ -221,6 +221,15 @@
     }
 
     /* 30% 40% 30% */
+    .shatter_30-40-30 > *:nth-child(1),
+    .shatter_30-40-30 > *:nth-child(3) {
+        flex-basis: calc(100% / 3.33333333334);
+    }
+    .shatter_30-40-30 > *:nth-child(2) {
+        flex-basis: calc(100% / 2.5);
+    }
+
+    /* 33% 33% 33% */
     .shatter_30-40-30 > *:nth-child(1),
     .shatter_30-40-30 > *:nth-child(3) {
         flex-basis: calc(100% / 3.33333333334);

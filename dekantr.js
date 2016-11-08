@@ -11,7 +11,7 @@ function Dekantr() {
     this.dekant = function() { // this will be the method that "dekants" the retrieved and built modular content into the site's DOM
         let nodes = document.querySelectorAll("[data-dekantr-module]");
         for (let n = 0; n < nodes.length; ++n) {
-            nodes[n].classList.add("dekantr-loading");
+            nodes[n].classList.add("shatter-loading");
             let url = this.path + nodes[n].getAttribute("data-dekantr-module") + ".html",
             r = new XMLHttpRequest(); // where r is request.
             r.responseType = "document";
@@ -21,7 +21,7 @@ function Dekantr() {
                 if (r.readyState === r.DONE && (r.status >= 200 && r.status <= 300)) {
                     setTimeout( () => {
                         nodes[n].innerHTML = r.responseXML.getElementsByTagName("body")[0].innerHTML;
-                        nodes[n].classList.remove("dekantr-loading");
+                        nodes[n].classList.remove("shatter-loading");
                     }, Math.floor((Math.random() * 1000) * 2 + 1000));
                 }
             };
@@ -113,7 +113,7 @@ var dekantr = new Dekantr();
 // explore this code later
 
 /*
-let el = document.querySelectorAll("#testbed.dekantr-loading-iostream")[0],
+let el = document.querySelectorAll("#testbed.shatter-loading-iostream")[0],
 content = window.getComputedStyle(el, ":after").getPropertyValue("content");
 
 let groupPixelWidth = (((content.length + 1) * 10) / ((content.length + 1) / 9));

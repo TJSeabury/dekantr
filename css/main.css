@@ -157,10 +157,10 @@ p, a, pre, code, span {
 body {
     color: #11aaee;
     border-color: #11aaee;
-    animation: colorshift;
+    /*animation: colorshift;
     animation-duration: 15s;
     animation-timing-function: ease;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite;*/
 }
 
 /* ==========================================================================

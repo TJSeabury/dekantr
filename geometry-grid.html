@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Experimental Geometry Layout</title>
+    <link rel="stylesheet" href="css/shatter.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #222;
+            height: 100%;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        section {
+            position: relative;
+            transform: rotateZ(45deg);
+            width: 10vw;
+            height: 10vw;
+            background-color: #333;
+            cursor: pointer;
+            transition: 1s cubic-bezier(0.19,1,0.21,1) all;
+        }
+        figure {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: rgba(170,221,17,1);
+            transition: 1s cubic-bezier(0.19,1,0.21,1) all;
+            transition-delay: 0.25s;
+        }
+        .top {
+            top: -100%;
+            left: 0;
+            transform: skewX(-45deg);
+            transform-origin: 0 100%;
+        }
+        .left {
+            top: 0;
+            left: -100%;
+            transform: skewY(-45deg);
+            transform-origin: 100% 0;
+        }
+        .bottom {
+            top: 100%;
+            left: 0;
+            transform: skewX(-45deg);
+            transform-origin: 100% 0;
+        }
+        .right {
+            top: 0;
+            left: 100%;
+            transform: skewY(-45deg);
+            transform-origin: 0 100%;
+        }
+        /* HOVER EFFECT */
+        section:hover {
+            background-color: rgba(0,0,0,0);
+        }
+        section:hover figure {
+            background-color: rgba(170,221,17,1);
+        }
+        section:hover .top {
+            top: -250%;
+            left: 0;
+        }
+        section:hover .left {
+            top: 0;
+            left: -250%;
+        }
+        section:hover .bottom {
+            top: 250%;
+            left: 0;
+        }
+        section:hover .right {
+            top: 0;
+            left: 250%;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section>
+            <p></p>
+            <figure class="top"></figure>
+            <figure class="left"></figure>
+            <figure class="bottom"></figure>
+            <figure class="right"></figure>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

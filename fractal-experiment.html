@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fractal Experiment</title>
+    <style>
+        main {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #222;
+            overflow: hidden;
+        }
+        main > section {
+            width: 2vw;
+            height: 2vw;
+            background-color: #cc5511;
+            border-radius: 100%;
+            position: relative;
+        }
+        main > section > section {
+            position: absolute;
+            top: calc(50% - (2vw * 0.9 / 2));
+            right: 100%;
+            width: 90%;
+            height: 90%;
+            background-color: #cc5511;
+            border-radius: 100%;
+        }
+        main > section > section:last-child {
+            left: 100%;
+            transform: rotate(180deg);
+        }
+        div {
+            position: absolute;
+            top: calc(50% - (2vw * 0.9 / 2));
+            right: 100%;
+            width: 90%;
+            height: 90%;
+            background-color: #cc5511;
+            border-radius: 100%;
+            transition: 1s cubic-bezier(0.19,1,0.21,1) all;
+        }
+        main > section {
+            animation: rotate;
+            animation-duration: 60s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        div {
+            animation: fractalshift;
+            animation-duration: 60s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-180deg);
+            }
+            50% {
+                transform: rotate(0deg);
+            }
+            75% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        @keyframes fractalshift {
+            0% {
+                top: calc(50% - 2vw * 0.9 / 2);
+                transform: rotate(0deg);
+            }
+            25% {
+                top: calc((50% - 2vw * 0.9 / 2) * -1);
+                transform: rotate(45deg);
+            }
+            50% {
+                top: calc(50% - 2vw * 0.9 / 2);
+                transform: rotate(0deg);
+            }
+            75% {
+                top: calc((50% - 2vw * 0.9 / 2) * -1);
+                transform: rotate(-45deg);
+            }
+            100% {
+                top: calc(50% - 2vw * 0.9 / 2);
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <section><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></section>
+            <section><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></section>
+        </section>
+    </main>
+</body>
+</html>

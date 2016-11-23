@@ -17,7 +17,7 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background-color: #222;
+            background-color: #111;
             overflow: hidden;
             animation: fadeIn;
             animation-duration: 5s;
@@ -36,29 +36,21 @@
             color: rgba(170,221,17,0.5);
             padding-left: 15%;
             text-shadow: -5px 5px 5px rgba(0,0,0,0.5);
-            animation: colorshift;
-            animation-duration: 15s;
-            animation-timing-function: ease;
-            animation-iteration-count: infinite;
         }
         main > section {
-            width: 2vw;
-            height: 2vw;
-            background-color: rgba(170,221,17,0.5);
+            width: 4vw;
+            height: 4vw;
+            background-color: rgba(170,221,17,0.1);
             border-radius: 100%;
             position: relative;
-            animation: pulseSize;
-            animation-duration: 120s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
         }
         main > section > section {
             position: absolute;
-            top: calc(50% - (2vw * 0.9 / 2));
+            top: calc(50% - (4vw * 0.9 / 2));
             right: 100%;
-            width: 90%;
-            height: 90%;
-            background-color: rgba(170,221,17,0.5);
+            width: 95%;
+            height: 95%;
+            background-color: rgba(170,221,17,0.1);
             border-radius: 100%;
         }
         main > section > section:last-child {
@@ -67,11 +59,11 @@
         }
         div {
             position: absolute;
-            top: calc(50% - (2vw * 0.9 / 2));
+            top: calc(50% - (4vw * 0.9 / 2));
             right: 100%;
             width: 90%;
             height: 90%;
-            background-color: rgba(170,221,17,0.5);
+            background-color: rgba(170,221,17,0.1);
             border-radius: 100%;
         }
         main > section {
@@ -89,21 +81,6 @@
             animation-delay: -17s;
         }
 
-        @keyframes pulseSize {
-            0% {
-                width: 2vw;
-                height: 2vw;
-            }
-            50% {
-                width: 3vw;
-                height: 3vw;
-            }
-            100% {
-                width: 2vw;
-                height: 2vw;
-            }
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -116,6 +93,7 @@
         @keyframes rotate {
             0% {
                 transform: rotate(0deg);
+                filter: hue-rotate(0deg) blur(1px);
             }
             25% {
                 transform: rotate(-180deg);
@@ -128,27 +106,28 @@
             }
             100% {
                 transform: rotate(0deg);
+                filter: hue-rotate(359deg) blur(1px);
             }
         }
         @keyframes fractalshift {
             0% {
-                top: calc(50% - (2vw * 0.9 / 2));
+                top: calc(50% - (4vw * 0.9 / 2));
                 transform: rotate(0deg);
             }
             25% {
-                top: calc(-1 * (50% - (2vw * 0.9 / 2)));
-                transform: rotate(15deg);
+                top: calc(-1 * (50% - (4vw * 0.9 / 2)));
+                transform: rotate(65deg);
             }
             50% {
-                top: calc(50% - (2vw * 0.9 / 2));
+                top: calc(50% - (4vw * 0.9 / 2));
                 transform: rotate(0deg);
             }
             75% {
-                top: calc(-1 * (50% - (2vw * 0.9 / 2)));
-                transform: rotate(-15deg);
+                top: calc(-1 * (50% - (4vw * 0.9 / 2)));
+                transform: rotate(-65deg);
             }
             100% {
-                top: calc(50% - (2vw * 0.9 / 2));
+                top: calc(50% - (4vw * 0.9 / 2));
                 transform: rotate(0deg);
             }
         }

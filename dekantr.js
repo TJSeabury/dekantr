@@ -1,9 +1,9 @@
 
-function Dekantr() {
+function Shatter() {
     "use strict";
     this.path = "modules/";
     this.buffer = null;
-    this.html = null; // root DOM element to hold in dekantr object for easy reference, this could really be anything, i.e. the best way to access the document
+    this.html = null; // root DOM element to hold in Shatter object for easy reference, this could really be anything, i.e. the best way to access the document
     this.modules = {};
     this.fetch = function(url) { // build the XMLHttprequest handler here. This should take either a string or url ( or build a url based on a string, or know module name)
     };
@@ -66,7 +66,7 @@ function Dekantr() {
         this.tick = function(fu) {
             this.now = Date.now();
             this.delta = this.now - this.then;
-            this.fps = Dekantr.truncate((1 / this.delta) * 1000, 1);
+            this.fps = Shatter.truncate((1 / this.delta) * 1000, 1);
             this.frame++;
             if (this.delta > this.interval) {
                 this.then = this.now - (this.delta % this.interval);
@@ -78,7 +78,7 @@ function Dekantr() {
                     fu.shift().call();
                 }
             }
-            window.requestAnimationFrame(this.tick.bind(Dekantr));
+            window.requestAnimationFrame(this.tick.bind(Shatter));
         };
         this.updateDisplay = function() {
             let fpsDisplay = document.getElementById("fps");
@@ -93,16 +93,44 @@ function Dekantr() {
         return (parseInt(figure*d)/d).toFixed(decimals);
     };
 
-    this.load = function(fu) {
-        if (window.addEventListener)  // W3C DOM
-            window.addEventListener('load', fu, false);
-        else if (window.attachEvent) { // IE DOM
-            return window.attachEvent('onload', fu);
-        }
-        else console.log('I\'m sorry Dave, I\'m afraid I can\'t do that.');
+    this.listen = function(fu) {
+        let listeners = new Promise((resolve, reject)=>{
+            let validFunctions = [],
+                invalidFunctions = [];
+            if (Array.isArray(fu)) {
+                for (let i = 0; i < fu.length; ++i) {
+                    if (typeof fu[i] === 'function') {
+                        validFunctions.push(fu[i]);
+                    } else {
+                        invalidFunctions.push(fu[i]);
+                    }
+                }
+            } else if (typeof fu === 'function') {
+                validFunctions.push(fu);
+            }
+            else {
+                invalidFunctions.push(fu);
+            }
+            resolve(validFunctions);
+            reject(invalidFunctions);
+        });
+
+        listeners.then((valid)=>{
+            for (let i = 0; i < valid.length; ++i) {
+                if (window.addEventListener) { // W3C DOM
+                    window.addEventListener('load', valid[i], false);
+                } else if (window.attachEvent) { // IE DOM
+                    window.attachEvent('onload', valid[i]);
+                }
+            }
+        }).catch((rejected)=>{
+            for (let i = 0; i < rejected; ++i) {
+                console.log(rejected[i] + " is not a function!");
+            }
+        });
     }
 }
-var dekantr = new Dekantr();
+let sh = new Shatter();
 
 // useful snippet; integrate it
 // var scrollTop = pageYOffset || (document.documentElement.clientHeight ? document.documentElement.scrollTop : document.body.scrollTop);

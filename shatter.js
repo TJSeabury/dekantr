@@ -1,14 +1,812 @@
 
 function Shatter() {
     "use strict";
+
+    /**************************************
+     ------------- Properties -------------
+    ***************************************/
     this.path = "modules/";
+
     this.buffer = null;
-    this.html = null; // root DOM element to hold in Shatter object for easy reference, this could really be anything, i.e. the best way to access the document
+
+    // root DOM element to hold in Shatter object for easy reference, this could really be anything, i.e. the best way to access the document
+    this.html = null;
+
     this.modules = {};
-    this.fetch = function(url) { // build the XMLHttprequest handler here. This should take either a string or url ( or build a url based on a string, or know module name)
+
+    this.tachymeter = new Tachymeter();
+
+    this.elements = {
+        comment: {
+            name: 'comment',
+            tag: '<!--...-->',
+            open: '<!--',
+            close: '-->',
+            wrap: true
+        },
+        doctype: {
+            name: 'doctype',
+            tag: '<!DOCTYPE>',
+            open: null,
+            close: null,
+            wrap: false
+        },
+        a: {
+            name: 'a',
+            tag: '<a>',
+            open: '<a>',
+            close: '</a>',
+            wrap: true
+        },
+        abbr: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        address: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        area: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        article: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        aside: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        audio: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        b: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        base: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        bdi: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        bdo: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        blockquote: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        body: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        br: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        button: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        canvas: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        caption: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        cite: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        code: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        col: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        colgroup: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        datalist: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        dd: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        del: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        details: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        dfn: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        dialog: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        div: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        dl: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        dt: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        em: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        embed: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        fieldset: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        figcaption: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        figure: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        footer: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        form: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        h1: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        h2: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        h3: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        h4: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        h5: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        h6: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        head: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        header: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        hr: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        html: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        i: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        iframe: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        img: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        input: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        ins: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        kbd: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        keygen: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        label: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        legend: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        li: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        link: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        main: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        map: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        mark: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        menu: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        menuitem: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        meta: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        meter: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        nav: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        noscript: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        object: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        ol: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        optgroup: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        option: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        output: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        p: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        param: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        pre: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        progress: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        q: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        rp: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        rt: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        ruby: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        s: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        samp: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        script: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        section: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        select: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        small: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        source: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        span: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        strong: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        style: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        sub: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        summary: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        sup: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        table: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        tbody: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        td: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        textarea: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        tfoot: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        th: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        thead: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        time: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        title: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        tr: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        track: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        u: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        ul: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        var: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        video: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        },
+        wbr: {
+            name: '',
+            tag: '',
+            open: '',
+            close: '',
+            wrap: true
+        }
     };
-    
-    this.dekant = function() { // this will be the method that "dekants" the retrieved and built modular content into the site's DOM
+
+
+    /**************************************
+    --------------- Methods ---------------
+    ***************************************/
+
+    // build the XMLHttprequest handler here. This should take either a string or url ( or build a url based on a string, or know module name)
+    this.fetch = function(url) {
+    };
+
+    // this will be the method that "dekants" the retrieved and built modular content into the site's DOM
+    this.dekant = function() {
         let nodes = document.querySelectorAll("[data-dekantr-module]");
         for (let n = 0; n < nodes.length; ++n) {
             nodes[n].classList.add("shatter-loading");
@@ -30,120 +828,7 @@ function Shatter() {
     };
 
     this.get = function(target = [document]) {
-        let type,
-            elements = [
-                '<!--...-->',
-                '<!DOCTYPE>',
-                '<a>',
-                '<abbr>',
-                '<address>',
-                '<area>',
-                '<article>',
-                '<aside>',
-                '<audio>',
-                '<b>',
-                '<base>',
-                '<bdi>',
-                '<bdo>',
-                '<blockquote>',
-                '<body>',
-                '<br>',
-                '<button>',
-                '<canvas>',
-                '<caption>',
-                '<cite>',
-                '<code>',
-                '<col>',
-                '<colgroup>',
-                '<datalist>',
-                '<dd>',
-                '<del>',
-                '<details>',
-                '<dfn>',
-                '<dialog>',
-                '<div>',
-                '<dl>',
-                '<dt>',
-                '<em>',
-                '<embed>',
-                '<fieldset>',
-                '<figcaption>',
-                '<figure>',
-                '<footer>',
-                '<form>',
-                '<h1>',
-                '<h2>',
-                '<h3>',
-                '<h4>',
-                '<h5>',
-                '<h6>',
-                '<head>',
-                '<header>',
-                '<hr>',
-                '<html>',
-                '<i>',
-                '<iframe>',
-                '<img>',
-                '<input>',
-                '<ins>',
-                '<kbd>',
-                '<keygen>',
-                '<label>',
-                '<legend>',
-                '<li>',
-                '<link>',
-                '<main>',
-                '<map>',
-                '<mark>',
-                '<menu>',
-                '<menuitem>',
-                '<meta>',
-                '<meter>',
-                '<nav>',
-                '<noscript>',
-                '<object>',
-                '<ol>',
-                '<optgroup>',
-                '<option>',
-                '<output>',
-                '<p>',
-                '<param>',
-                '<pre>',
-                '<progress>',
-                '<q>',
-                '<rp>',
-                '<rt>',
-                '<ruby>',
-                '<s>',
-                '<samp>',
-                '<script>',
-                '<section>',
-                '<select>',
-                '<small>',
-                '<source>',
-                '<span>',
-                '<strong>',
-                '<style>',
-                '<sub>',
-                '<summary>',
-                '<sup>',
-                '<table>',
-                '<tbody>',
-                '<td>',
-                '<textarea>',
-                '<tfoot>',
-                '<th>',
-                '<thead>',
-                '<time>',
-                '<title>',
-                '<tr>',
-                '<track>',
-                '<u>',
-                '<ul>',
-                '<var>',
-                '<video>',
-                '<wbr>'
-            ];
+        let type;
         if (target.charAt(0) === '#') {}
     };
 
@@ -172,38 +857,6 @@ function Shatter() {
             styleSheet.insertRule(selector + '{' + propStr + '}', styleSheet.cssRules.length);
         }
     };
-
-    function Tachymeter(fu) {
-        let functions = fu;
-        this.then = Date.now();
-        this.now = null;
-        this.interval = 1000 / 60;
-        this.delta = null;
-        this.fps = 60;
-        this.frame = 0;
-        this.tick = function(fu) {
-            this.now = Date.now();
-            this.delta = this.now - this.then;
-            this.fps = Shatter.truncate((1 / this.delta) * 1000, 1);
-            this.frame++;
-            if (this.delta > this.interval) {
-                this.then = this.now - (this.delta % this.interval);
-                if ( this.frame >= 10 ) {
-                    this.updateDisplay();
-                    this.frame = 0;
-                }
-                while(fu.length){
-                    fu.shift().call();
-                }
-            }
-            window.requestAnimationFrame(this.tick.bind(Shatter));
-        };
-        this.updateDisplay = function() {
-            let fpsDisplay = document.getElementById("fps");
-            fpsDisplay.innerHTML = "FPS: " + this.fps;
-        };
-    }
-    this.tachymeter = new Tachymeter();
 
     this.truncate = function(figure, decimals) {
         if (!decimals) decimals = 2;
@@ -267,6 +920,40 @@ function Shatter() {
     this.ui = function() {
 
     };
+
+    /**************************************
+     ------------- Functions --------------
+    ***************************************/
+    function Tachymeter(fu) {
+        let functions = fu;
+        this.then = Date.now();
+        this.now = null;
+        this.interval = 1000 / 60;
+        this.delta = null;
+        this.fps = 60;
+        this.frame = 0;
+        this.tick = function(fu) {
+            this.now = Date.now();
+            this.delta = this.now - this.then;
+            this.fps = Shatter.truncate((1 / this.delta) * 1000, 1);
+            this.frame++;
+            if (this.delta > this.interval) {
+                this.then = this.now - (this.delta % this.interval);
+                if ( this.frame >= 10 ) {
+                    this.updateDisplay();
+                    this.frame = 0;
+                }
+                while(fu.length){
+                    fu.shift().call();
+                }
+            }
+            window.requestAnimationFrame(this.tick.bind(Shatter));
+        };
+        this.updateDisplay = function() {
+            let fpsDisplay = document.getElementById("fps");
+            fpsDisplay.innerHTML = "FPS: " + this.fps;
+        };
+    }
 }
 let sh = new Shatter();
 

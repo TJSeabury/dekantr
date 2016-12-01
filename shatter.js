@@ -801,6 +801,10 @@ function Shatter() {
     --------------- Methods ---------------
     ***************************************/
 
+    this.windowAt = function() {
+        return pageYOffset || (document.documentElement.clientHeight ? document.documentElement.scrollTop : document.body.scrollTop);
+    };
+
     // build the XMLHttprequest handler here. This should take either a string or url ( or build a url based on a string, or know module name)
     this.fetch = function(url) {
     };
@@ -858,10 +862,9 @@ function Shatter() {
         }
     };
 
-    this.truncate = function(figure, decimals) {
-        if (!decimals) decimals = 2;
-        var d = Math.pow(10,decimals);
-        return (parseInt(figure*d)/d).toFixed(decimals);
+    this.truncate = function(figure, decimals = 2) {
+        let d = Math.pow(10, decimals);
+        return (parseInt(figure * d) / d).toFixed(decimals);
     };
 
     this.listen = function(fu, target = 'window', event = 'load') {
@@ -917,13 +920,114 @@ function Shatter() {
 
     };
 
-    this.ui = function() {
-
+    this.ui = {
+        overlay: '',
+        data: null,
+        update: function() {},
+        render: function() {}
     };
 
     /**************************************
      ------------- Functions --------------
     ***************************************/
+
+    function binarySearch(A, T) {
+        /*
+        Given an array A of n elements with values or records A0 ... An−1, sorted such that A0 ≤ ... ≤ An−1,
+        and target value T, the following subroutine uses binary search to find the index of T in A.
+        */
+
+        /*Set L to 0 and R to n − 1.*/
+        let L = 0, R = A.length - 1, tFound = false;
+
+        /*Set m (the position of the middle element) to the floor of (L + R) / 2.*/
+        let m = Math.floor((L + R) / 2);
+        while (!tFound && L < R) {
+            if (A[m] === T) {
+                return A[m];
+            } else if (null) {
+                /*If Am < T, set L to m + 1 and go to step 2.*/
+
+            } else if (null) {
+                /*If Am > T, set R to m – 1 and go to step 2.*/
+
+            }
+            /*Now Am = T, the search is done; return m.*/
+
+        /*If L > R, the search terminates as unsuccessful.*/
+        }
+
+
+
+
+
+
+
+        /*
+        This iterative procedure keeps track of the search boundaries via two variables. Some implementations may place the comparison
+        for equality at the end of the algorithm, resulting in a faster comparison loop but costing one more iteration on average*/
+    }
+
+    /* REVIEW THIS AND BENCHMARK LATER */
+    let shell_sort = function(array){
+        let length = array.length;
+        let h = 1;
+        while( h < length / 3){
+            h = 3 * h + 1;
+        }
+
+        while( h > 0 ){
+            for ( let i = h; i < length; i++){
+
+                for ( let j = i; j > 0 && array[j] < array[j-h]; j-=h){
+                    array.swap(j, j-h);
+                }
+            }
+            //decreasing h
+            h = --h / 3
+
+        }
+        return array;
+    };
+
+    /* REVIEW THIS AND BENCHMARK LATER */
+    let merge_sort = function(array){
+        function merge(a, aux, lo, mid, hi ){
+
+            for (let k = lo; k <= hi; k++){
+                aux[k] = a[k];
+            }
+            debugger;
+            let i = lo;
+            let j = mid + 1;
+            for (let k = lo; k <= hi; k++){
+                if ( i > mid) a[k] = aux[j++];
+                else if ( j > hi ) a[k] = aux[i++];
+                else if ( aux[j] < aux[i]) a[k] = aux[j++];
+                else a[k] = aux[i++];
+            }
+        }
+
+        function sort(array, aux, lo, hi){
+            if (hi <= lo) return;
+            let mid = Math.floor(lo + (hi - lo) / 2);
+
+            sort(array, aux, lo, mid);
+            sort(array, aux, mid + 1, hi);
+
+            merge(array, aux, lo, mid, hi);
+        }
+
+        function merge_sort(array){
+            let aux = array.slice(0);
+            sort(array, aux, 0, array.length - 1);
+            return array;
+        }
+
+        return merge_sort(array);
+
+    };
+
     function Tachymeter(fu) {
         let functions = fu;
         this.then = Date.now();
@@ -955,29 +1059,4 @@ function Shatter() {
         };
     }
 }
-let sh = new Shatter();
-
-// useful snippet; integrate it
-// var scrollTop = pageYOffset || (document.documentElement.clientHeight ? document.documentElement.scrollTop : document.body.scrollTop);
-
-//
-// http://stackoverflow.com/questions/102605/can-i-perform-a-dns-lookup-hostname-to-ip-address-using-client-side-javascript/25962226#25962226
-//
-// explore this code later
-
-/*
-let el = document.querySelectorAll("#testbed.shatter-loading-iostream")[0],
-content = window.getComputedStyle(el, ":after").getPropertyValue("content");
-
-let groupPixelWidth = (((content.length + 1) * 10) / ((content.length + 1) / 9));
-console.log(groupPixelWidth);
-
-let width = 90;
-console.log(width);
-
-let visibleGroups = width / groupPixelWidth;
-console.log(visibleGroups);
-
-let ppf = (((content.length + 1) * 10) / 90) / 60;
-let t = width / ppf;
-console.log("v: " + ppf + " t: " + t + "s");*/
+let s = new Shatter();

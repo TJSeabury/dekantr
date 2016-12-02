@@ -19,779 +19,668 @@ function Shatter() {
     this.elements = {
         comment: {
             name: 'comment',
-            tag: '<!--...-->',
-            open: '<!--',
-            close: '-->',
+            tag: '<!--',
+            end: '-->',
             wrap: true
         },
         doctype: {
             name: 'doctype',
             tag: '<!DOCTYPE>',
-            open: null,
-            close: null,
+            end: null,
             wrap: false
         },
         a: {
             name: 'a',
             tag: '<a>',
-            open: '<a>',
-            close: '</a>',
+            end: '</a>',
             wrap: true
         },
         abbr: {
-            name: '',
-            tag: '',
-            open: '',
-            close: '',
+            name: 'abbr',
+            tag: '<abbr>',
+            end: '</abbr>',
             wrap: true
         },
         address: {
-            name: '',
-            tag: '',
-            open: '',
-            close: '',
+            name: 'address',
+            tag: '<address>',
+            end: '</address>',
             wrap: true
         },
         area: {
-            name: '',
-            tag: '',
-            open: '',
-            close: '',
-            wrap: true
+            name: 'area',
+            tag: '<area>',
+            end: 'null',
+            wrap: false
         },
         article: {
-            name: '',
-            tag: '',
-            open: '',
-            close: '',
+            name: 'article',
+            tag: '<article>',
+            end: '</article>',
             wrap: true
         },
         aside: {
-            name: '',
-            tag: '',
-            open: '',
-            close: '',
+            name: 'aside',
+            tag: '<aside>',
+            end: '</aside>',
             wrap: true
         },
         audio: {
-            name: '',
-            tag: '',
-            open: '',
-            close: '',
+            name: 'audio',
+            tag: '<audio>',
+            end: '</audio>',
             wrap: true
         },
         b: {
-            name: '',
-            tag: '',
-            open: '',
-            close: '',
+            name: 'b',
+            tag: '<b>',
+            end: '</b>',
             wrap: true
         },
         base: {
-            name: '',
-            tag: '',
-            open: '',
-            close: '',
-            wrap: true
+            name: 'base',
+            tag: '<base>',
+            end: 'null',
+            wrap: false
         },
         bdi: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         bdo: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         blockquote: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         body: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         br: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         button: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         canvas: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         caption: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         cite: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         code: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         col: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         colgroup: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         datalist: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         dd: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         del: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         details: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         dfn: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         dialog: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         div: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         dl: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         dt: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         em: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         embed: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         fieldset: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         figcaption: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         figure: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         footer: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         form: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         h1: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         h2: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         h3: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         h4: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         h5: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         h6: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         head: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         header: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         hr: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         html: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         i: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         iframe: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         img: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         input: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         ins: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         kbd: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         keygen: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         label: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         legend: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         li: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         link: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         main: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         map: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         mark: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         menu: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         menuitem: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         meta: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         meter: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         nav: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         noscript: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         object: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         ol: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         optgroup: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         option: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         output: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         p: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         param: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         pre: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         progress: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         q: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         rp: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         rt: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         ruby: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         s: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         samp: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         script: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         section: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         select: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         small: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         source: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         span: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         strong: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         style: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         sub: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         summary: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         sup: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         table: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         tbody: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         td: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         textarea: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         tfoot: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         th: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         thead: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         time: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         title: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         tr: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         track: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         u: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         ul: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         var: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         video: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         },
         wbr: {
             name: '',
             tag: '',
-            open: '',
-            close: '',
+            end: '',
             wrap: true
         }
     };
@@ -832,8 +721,21 @@ function Shatter() {
     };
 
     this.get = function(target = [document]) {
-        let type;
-        if (target.charAt(0) === '#') {}
+        if (Array.isArray(target)) {
+            target.forEach(()=>{
+                switch (target) {
+                    case target.charAt(0) === '#':
+                        break;
+                    case target.charAt(0) === '.':
+                        break;
+                }
+            });
+        } else {
+            switch (target) {
+                case target.charAt(0) === '#':
+
+            }
+        }
     };
 
     this.mutate = function(element, rules) {

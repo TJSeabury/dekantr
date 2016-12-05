@@ -84,315 +84,315 @@ function Shatter() {
             wrap: false
         },
         bdi: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'bdi',
+            tag: '<bdi>',
+            end: '</bdi>',
             wrap: true
         },
         bdo: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'bdo',
+            tag: '<bdo>',
+            end: '</bdo>',
             wrap: true
         },
         blockquote: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'blockquote',
+            tag: '<blockquote>',
+            end: '</blockquote>',
             wrap: true
         },
         body: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'body',
+            tag: '<body>',
+            end: '</body>',
             wrap: true
         },
         br: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'br',
+            tag: '<br>',
+            end: 'null',
+            wrap: false
         },
         button: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'button',
+            tag: '<button>',
+            end: '</button>',
             wrap: true
         },
         canvas: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'canvas',
+            tag: '<canvas>',
+            end: '</canvas>',
             wrap: true
         },
         caption: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'caption',
+            tag: '<caption>',
+            end: '</caption>',
             wrap: true
         },
         cite: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'cite',
+            tag: '<cite>',
+            end: '</cite>',
             wrap: true
         },
         code: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'code',
+            tag: '<code>',
+            end: '</code>',
             wrap: true
         },
         col: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'col',
+            tag: '<col>',
+            end: 'null',
+            wrap: false
         },
         colgroup: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'colgroup',
+            tag: '<colgroup>',
+            end: '</colgroup>',
             wrap: true
         },
         datalist: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'datalist',
+            tag: '<datalist>',
+            end: '</datalist>',
             wrap: true
         },
         dd: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'dd',
+            tag: '<dd>',
+            end: '</dd>',
             wrap: true
         },
         del: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'del',
+            tag: '<del>',
+            end: '</del>',
             wrap: true
         },
         details: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'details',
+            tag: '<details>',
+            end: '</details>',
             wrap: true
         },
         dfn: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'dfn',
+            tag: '<dfn>',
+            end: '</dfn>',
             wrap: true
         },
         dialog: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'dialog',
+            tag: '<dialog>',
+            end: '</dialog>',
             wrap: true
         },
         div: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'div',
+            tag: '<div>',
+            end: '</div>',
             wrap: true
         },
         dl: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'dl',
+            tag: '<dl>',
+            end: '</dl>',
             wrap: true
         },
         dt: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'dt',
+            tag: '<dt>',
+            end: '</dt>',
             wrap: true
         },
         em: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'em',
+            tag: '<em>',
+            end: '</em>',
             wrap: true
         },
         embed: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'embed',
+            tag: '<embed>',
+            end: '</embed>',
             wrap: true
         },
         fieldset: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'fieldset',
+            tag: '<fieldset>',
+            end: '</fieldset>',
             wrap: true
         },
         figcaption: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'figcaption',
+            tag: '<figcaption>',
+            end: '</figcaption>',
             wrap: true
         },
         figure: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'figure',
+            tag: '<figcaption>',
+            end: '</figcaption>',
             wrap: true
         },
         footer: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'footer',
+            tag: '<footer>',
+            end: '</footer>',
             wrap: true
         },
         form: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'form',
+            tag: '<form>',
+            end: '</form>',
             wrap: true
         },
         h1: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'h1',
+            tag: '<h1>',
+            end: '</h1>',
             wrap: true
         },
         h2: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'h2',
+            tag: '<h2>',
+            end: '</h2>',
             wrap: true
         },
         h3: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'h3',
+            tag: '<h3>',
+            end: '</h3>',
             wrap: true
         },
         h4: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'h4',
+            tag: '<h4>',
+            end: '</h4>',
             wrap: true
         },
         h5: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'h5',
+            tag: '<h5>',
+            end: '</h5>',
             wrap: true
         },
         h6: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'h6',
+            tag: '<h6>',
+            end: '</h6>',
             wrap: true
         },
         head: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'head',
+            tag: '<head>',
+            end: '</head>',
             wrap: true
         },
         header: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'header',
+            tag: '<header>',
+            end: '</header>',
             wrap: true
         },
         hr: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'hr',
+            tag: '<hr>',
+            end: 'null',
+            wrap: false
         },
         html: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'html',
+            tag: '<html>',
+            end: '</html>',
             wrap: true
         },
         i: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'i',
+            tag: '<i>',
+            end: '</i>',
             wrap: true
         },
         iframe: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'iframe',
+            tag: '<iframe>',
+            end: '</iframe>',
             wrap: true
         },
         img: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'img',
+            tag: '<img>',
+            end: 'null',
+            wrap: false
         },
         input: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'input',
+            tag: '<input>',
+            end: 'null',
+            wrap: false
         },
         ins: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'ins',
+            tag: '<ins>',
+            end: '</ins>',
             wrap: true
         },
         kbd: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'kbd',
+            tag: '<kbd>',
+            end: '</kbd>',
             wrap: true
         },
         keygen: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'keygen',
+            tag: '<keygen>',
+            end: 'null',
+            wrap: false
         },
         label: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'label',
+            tag: '<label>',
+            end: '</label>',
             wrap: true
         },
         legend: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'legend',
+            tag: '<legend>',
+            end: '</legend>',
             wrap: true
         },
         li: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'li',
+            tag: '<li>',
+            end: '</li>',
             wrap: true
         },
         link: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'link',
+            tag: '<link>',
+            end: null,
+            wrap: false
         },
         main: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'main',
+            tag: '<main>',
+            end: '</main>',
             wrap: true
         },
         map: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'map',
+            tag: '<map>',
+            end: '</map>',
             wrap: true
         },
         mark: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'mark',
+            tag: '<mark>',
+            end: '</mark>',
             wrap: true
         },
         menu: {

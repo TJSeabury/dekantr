@@ -1,0 +1,4 @@
+// thread worker
+function Worker() {
+
+}

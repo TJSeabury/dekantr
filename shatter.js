@@ -693,6 +693,8 @@ function Shatter() {
     function buildDOM(DOM) {
         let newDOM = {};
 
+        // code more code here
+
         function Element(el) {
             this.node = el;
             this.tag = el.tagName;

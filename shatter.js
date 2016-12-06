@@ -10,7 +10,7 @@ function Shatter() {
     this.buffer = null;
 
     // root DOM element to hold in Shatter object for easy reference, this could really be anything, i.e. the best way to access the document
-    this.html = null;
+    this.shatterDOM = null;
 
     this.modules = {};
 
@@ -396,292 +396,292 @@ function Shatter() {
             wrap: true
         },
         menu: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'menu',
+            tag: '<menu>',
+            end: '</menu>',
             wrap: true
         },
         menuitem: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'menuitem',
+            tag: '<menuitem>',
+            end: '</menuitem>',
             wrap: true
         },
         meta: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'meta',
+            tag: '<meta>',
+            end: null,
+            wrap: false
         },
         meter: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'meter',
+            tag: '<meter>',
+            end: '</meter>',
             wrap: true
         },
         nav: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'nav',
+            tag: '<nav>',
+            end: '</nav>',
             wrap: true
         },
         noscript: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'noscript',
+            tag: '<noscript>',
+            end: '</noscript>',
             wrap: true
         },
         object: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'object',
+            tag: '<object>',
+            end: '</object>',
             wrap: true
         },
         ol: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'ol',
+            tag: '<ol>',
+            end: '</ol>',
             wrap: true
         },
         optgroup: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'optgroup',
+            tag: '<optgroup>',
+            end: '</optgroup>',
             wrap: true
         },
         option: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'option',
+            tag: '<option>',
+            end: '</option>',
             wrap: true
         },
         output: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'output',
+            tag: '<output>',
+            end: '</output>',
             wrap: true
         },
         p: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'p',
+            tag: '<p>',
+            end: '</p>',
             wrap: true
         },
         param: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'param',
+            tag: '<param>',
+            end: null,
+            wrap: false
         },
         pre: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'pre',
+            tag: '<pre>',
+            end: '</pre>',
             wrap: true
         },
         progress: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'progress',
+            tag: '<progress>',
+            end: '</progress>',
             wrap: true
         },
         q: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'q',
+            tag: '<q>',
+            end: '</q>',
             wrap: true
         },
         rp: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'rp',
+            tag: '<rp>',
+            end: '</rp>',
             wrap: true
         },
         rt: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'rt',
+            tag: '<rt>',
+            end: '</rt>',
             wrap: true
         },
         ruby: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'ruby',
+            tag: '<ruby>',
+            end: '</ruby>',
             wrap: true
         },
         s: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 's',
+            tag: '<s>',
+            end: '</s>',
             wrap: true
         },
         samp: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'samp',
+            tag: '<samp>',
+            end: '</samp>',
             wrap: true
         },
         script: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'script',
+            tag: '<script>',
+            end: '</script>',
             wrap: true
         },
         section: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'section',
+            tag: '<section>',
+            end: '</section>',
             wrap: true
         },
         select: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'select',
+            tag: '<select>',
+            end: '</select>',
             wrap: true
         },
         small: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'small',
+            tag: '<small>',
+            end: '</small>',
             wrap: true
         },
         source: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'source',
+            tag: '<source>',
+            end: null,
+            wrap: false
         },
         span: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'span',
+            tag: '<span>',
+            end: '</span>',
             wrap: true
         },
         strong: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'strong',
+            tag: '<strong>',
+            end: '</strong>',
             wrap: true
         },
         style: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'style',
+            tag: '<style>',
+            end: '</style>',
             wrap: true
         },
         sub: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'sub',
+            tag: '<sub>',
+            end: '</sub>',
             wrap: true
         },
         summary: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'summary',
+            tag: '<summary>',
+            end: '</summary>',
             wrap: true
         },
         sup: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'sup',
+            tag: '<sup>',
+            end: '</sup>',
             wrap: true
         },
         table: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'table',
+            tag: '<table>',
+            end: '</table>',
             wrap: true
         },
         tbody: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'tbody',
+            tag: '<tbody>',
+            end: '</tbody>',
             wrap: true
         },
         td: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'td',
+            tag: '<td>',
+            end: '<td>',
             wrap: true
         },
         textarea: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'textarea',
+            tag: '<textarea>',
+            end: '</textarea>',
             wrap: true
         },
         tfoot: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'tfoot',
+            tag: '<tfoot>',
+            end: '</tfoot>',
             wrap: true
         },
         th: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'th',
+            tag: '<th>',
+            end: '</th>',
             wrap: true
         },
         thead: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'thead',
+            tag: '<thead>',
+            end: '</thead>',
             wrap: true
         },
         time: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'time',
+            tag: '<time>',
+            end: '</time>',
             wrap: true
         },
         title: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'title',
+            tag: '<title>',
+            end: '</title>',
             wrap: true
         },
         tr: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'tr',
+            tag: '<tr>',
+            end: '</tr>',
             wrap: true
         },
         track: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'track',
+            tag: '<track>',
+            end: null,
+            wrap: false
         },
         u: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'u',
+            tag: '<u>',
+            end: '</u>',
             wrap: true
         },
         ul: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'ul',
+            tag: '<ul>',
+            end: '</ul>',
             wrap: true
         },
         var: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'var',
+            tag: '<var>',
+            end: '</var>',
             wrap: true
         },
         video: {
-            name: '',
-            tag: '',
-            end: '',
+            name: 'video',
+            tag: '<video>',
+            end: '</video>',
             wrap: true
         },
         wbr: {
-            name: '',
-            tag: '',
-            end: '',
-            wrap: true
+            name: 'wbr',
+            tag: '<wbr>',
+            end: null,
+            wrap: false
         }
     };
 
@@ -690,7 +690,18 @@ function Shatter() {
      ---------------- INIT ----------------
     ***************************************/
 
+    function buildDOM(DOM) {
+        let newDOM = {};
 
+        function Element(el) {
+            this.node = el;
+            this.tag = el.tagName;
+            this.id = el.id;
+            this.class = el.classList;
+            this.attributes = el.attributes;
+            this.content = '';
+        }
+    }
 
 
     /**************************************
@@ -865,16 +876,10 @@ function Shatter() {
 
         /*If L > R, the search terminates as unsuccessful.*/
         }
-
-
-
-
-
-
-
         /*
         This iterative procedure keeps track of the search boundaries via two variables. Some implementations may place the comparison
-        for equality at the end of the algorithm, resulting in a faster comparison loop but costing one more iteration on average*/
+        for equality at the end of the algorithm, resulting in a faster comparison loop but costing one more iteration on average
+        */
     }
 
     /* REVIEW THIS AND BENCHMARK LATER */

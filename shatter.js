@@ -693,7 +693,7 @@ function Shatter() {
     function buildDOM(DOM) {
         let newDOM = {};
 
-        // code more code here
+        // code more code here more
 
         function Element(el) {
             this.node = el;

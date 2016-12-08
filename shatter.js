@@ -710,6 +710,45 @@ function Shatter() {
     --------------- Methods ---------------
     ***************************************/
 
+    this.threadDispatcher = new ThreadDispatcher();
+
+    function ThreadDispatcher() {
+        let threads = {
+            0: 0,
+            1: 0,
+            2: 0,
+            3: 0
+        };
+
+        let fuQueue = [];
+
+        let threadsFree = 4;
+
+        function CreateThread(fu) {
+            this.result = null;
+            this.worker = new Worker(getScriptPath(()=>{
+                new Promise((resolve,reject)=>{
+                    self.addEventListener('message', ()=>{
+                        try { resolve(eval(fu)) } catch(err) { reject(err) }
+                    }, false);
+                })
+                .then(evalSuccess=>self.postMessage(evalSuccess))
+                .catch(evalErr=>self.postMessage(evalErr));
+            }));
+            this.worker.addEventListener('message', e=>{
+                worker.terminate();
+                this.worker = null;
+                this.result = e.data; // how do I access CreateThread.result properly?
+            }, false);
+            return this;
+        }
+
+        //As a worker normally take another JavaScript file to execute we convert the function in an URL: http://stackoverflow.com/a/16799132/2576706
+        function getScriptPath(foo){
+            return window.URL.createObjectURL(new Blob([foo.toString().match(/^\s*function\s*\(\s*\)\s*\{(([\s\S](?!\}$))*[\s\S])/)[1]],{type:'text/javascript'}));
+        }
+    }
+
     this.windowAt = function() {
         return pageYOffset || (document.documentElement.clientHeight ? document.documentElement.scrollTop : document.body.scrollTop);
     };

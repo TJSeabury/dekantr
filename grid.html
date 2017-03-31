@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta content="application/index">
+    <title>GRID</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab');
+        /*
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-family: 'Roboto Slab', serif;
+        font-family: 'Roboto Mono', monospace;
+        */
+        html {
+            margin: 0;
+            border: none;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 10px;
+            color: #444;
+        }
+        body {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header header header header header header header'
+                'main   main   main   main   main   main   main   main   aside  aside  aside  aside'
+                'footer footer footer footer footer footer footer footer footer footer footer footer';
+            grid-auto-columns: 1fr;
+            margin: 0;
+            border: none;
+            padding: 0;
+            font-size: 1.6rem;
+        }
+        header {
+            grid-area: header;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 8rem;
+            background-color: #e0e0e0;
+            color: white;
+            animation: 2s appear;
+            background-image: url('media/pattern-tile.jpg');
+            background-size: contain;
+            background-repeat: repeat-x;
+            background-blend-mode: overlay;
+            filter: drop-shadow(0 0.5rem 2px rgba(0,0,0,0.6));
+            z-index: 500;
+        }
+        main {
+            grid-area: main;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-flow: dense;
+            grid-gap: 1rem;
+            padding: 1rem;
+            background-color: #eee;
+            animation: 3s appear;
+            filter: drop-shadow(0 0.5rem 2px rgba(0,0,0,0.6));
+            z-index: 400;
+        }
+        aside {
+            grid-area: aside;
+            grid-gap: 1rem;
+            display: grid;
+            padding: 1rem;
+            background-color: #eee;
+            animation: 4s appear;
+            filter: drop-shadow(0 0.5rem 2px rgba(0,0,0,0.6));
+            z-index: 300;
+        }
+        footer {
+            grid-area: footer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 8rem;
+            background-color: #222;
+            color: white;
+            background-image: url('media/pattern-tile.jpg');
+            background-size: contain;
+            background-repeat: repeat-x;
+            background-blend-mode: multiply;
+            animation: 5s appear;
+            z-index: 200;
+        }
+        section {
+            padding: 1rem 3.14rem;
+            background-color: #333333;
+            color: #eee;
+            filter: drop-shadow(0 0.5rem 2px rgba(0,0,0,0.6));
+        }
+        a {
+            position: relative;
+            margin: 0 0.5rem;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            color: #11aaee;
+        }
+        a:before {
+            content: '>';
+            margin-right: 0.5rem;
+        }
+        a:after {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #11aaee;
+            opacity: 0;
+            transition: 0.2s ease-in all;
+        }
+        a:hover:after {
+            width: 100%;
+            opacity: 1;
+        }
+        h1 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 7rem;
+            text-shadow: 0.6rem 0.2rem 0.1rem rgba(0,0,0,0.6);
+            letter-spacing: 8px;
+            color: #11aaee;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 4rem;
+            text-shadow: 0.6rem 0.2rem 0.1rem rgba(0,0,0,0.6);
+            letter-spacing: 4px;
+            color: #11aaee;
+        }
+        h3 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 3rem;
+            text-shadow: 0.6rem 0.2rem 0.1rem rgba(0,0,0,0.6);
+            letter-spacing: 2px;
+            color: #eee;
+        }
+        @media only screen and (max-width: 1440px) {
+            html {
+                font-size: 1.25vmin;
+            }
+            body {
+                grid-template-areas:
+                    'header header header header header header header header header header header header'
+                    'main   main   main   main   main   main   main   main   main   aside  aside  aside'
+                    'footer footer footer footer footer footer footer footer footer footer footer footer';
+            }
+        }
+        @media only screen and (max-width: 1224px) {
+            html {
+                font-size: 1.125vmin;
+            }
+            body {
+                grid-template-areas:
+                    'header header header header header header header header header header header header'
+                    'main   main   main   main   main   main   main   main   aside  aside  aside  aside'
+                    'footer footer footer footer footer footer footer footer footer footer footer footer';
+            }
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media only screen and (max-width: 960px) {
+            html {
+                font-size: 1.4vmin;
+            }
+            body {
+                grid-template-areas:
+                    'header header header header header header header header header header header header'
+                    'main   main   main   main   main   main   main   main   main   main   main   main'
+                    'aside  aside  aside  aside  aside  aside  aside  aside  aside  aside  aside  aside'
+                    'footer footer footer footer footer footer footer footer footer footer footer footer';
+            }
+        }
+        @media only screen and (max-width: 640px) {
+            html {
+                font-size: 8px;
+            }
+            main {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 5rem;
+            }
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>GRID TEST PLATFORM</h1>
+</header>
+<main>
+    <section>
+        <h2>Lorem ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate massa a tellus luctus gravida. Nulla tempor venenatis quam, at hendrerit ligula blandit dignissim. In nec euismod ex, sit amet aliquet dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ornare nec diam pharetra porttitor. Quisque nisl urna, euismod non elementum ac, congue a odio. Proin iaculis porta est, bibendum accumsan diam fringilla at. Etiam molestie magna sit amet pharetra ornare. Donec quis ultricies neque. Sed mattis sem eu magna sagittis laoreet nec in erat.</p>
+    </section>
+    <section>
+        <h2>Etiam faucibus</h2>
+        <p>Etiam faucibus, urna non fringilla maximus, ipsum ligula consectetur justo, pretium eleifend magna nisi eget nulla. Etiam nec tellus in urna aliquet dapibus. Etiam convallis, nisi a maximus aliquet, est tortor hendrerit dolor, a volutpat ipsum odio ut nibh. Mauris viverra turpis nunc, at rutrum ipsum maximus eget. In sed varius eros. Nam ultrices ante ut nibh imperdiet, sed blandit eros laoreet. Ut luctus felis lacus, in placerat massa faucibus sit amet. Nullam vehicula nunc purus, in pulvinar nunc luctus id.</p>
+    </section>
+    <section>
+        <h2>Donec vulputate</h2>
+        <p>Donec vulputate et ex nec tincidunt. Etiam blandit interdum eros eget fringilla. Mauris interdum pharetra urna eget euismod. Sed posuere risus at leo fermentum, non maximus mi ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lorem arcu, vulputate at lectus quis, elementum pellentesque nulla. Duis suscipit facilisis massa eu dapibus. Sed ut tempus purus, at lobortis nisi.</p>
+    </section>
+    <section>
+        <h2>Donec vulputate</h2>
+        <p>Donec vulputate et ex nec tincidunt. Etiam blandit interdum eros eget fringilla. Mauris interdum pharetra urna eget euismod. Sed posuere risus at leo fermentum, non maximus mi ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lorem arcu, vulputate at lectus quis, elementum pellentesque nulla. Duis suscipit facilisis massa eu dapibus. Sed ut tempus purus, at lobortis nisi.</p>
+    </section>
+    <section>
+        <h2>Etiam faucibus</h2>
+        <p>Etiam faucibus, urna non fringilla maximus, ipsum ligula consectetur justo, pretium eleifend magna nisi eget nulla. Etiam nec tellus in urna aliquet dapibus. Etiam convallis, nisi a maximus aliquet, est tortor hendrerit dolor, a volutpat ipsum odio ut nibh. Mauris viverra turpis nunc, at rutrum ipsum maximus eget. In sed varius eros. Nam ultrices ante ut nibh imperdiet, sed blandit eros laoreet. Ut luctus felis lacus, in placerat massa faucibus sit amet. Nullam vehicula nunc purus, in pulvinar nunc luctus id.</p>
+    </section>
+    <section>
+        <h2>Lorem ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate massa a tellus luctus gravida. Nulla tempor venenatis quam, at hendrerit ligula blandit dignissim. In nec euismod ex, sit amet aliquet dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ornare nec diam pharetra porttitor. Quisque nisl urna, euismod non elementum ac, congue a odio. Proin iaculis porta est, bibendum accumsan diam fringilla at. Etiam molestie magna sit amet pharetra ornare. Donec quis ultricies neque. Sed mattis sem eu magna sagittis laoreet nec in erat.</p>
+    </section>
+</main>
+<aside>
+    <section>
+        <h3>Integer est nisl</h3>
+        <p>Integer est nisl, pharetra imperdiet tempor at, sodales in eros. Suspendisse est metus, commodo id egestas nec, imperdiet eget metus. Vestibulum non augue felis. Donec consectetur, nunc eu lacinia pretium, mi enim laoreet massa, nec semper ex nunc at purus. Sed dictum lorem eget lacus aliquet sagittis. Nulla eget semper nisi. Maecenas nec tortor nulla. Integer pretium elementum justo, nec auctor augue accumsan sit amet. Phasellus efficitur vestibulum orci, non dignissim turpis tincidunt in. Nam dictum augue sapien, vitae euismod magna accumsan quis. Suspendisse mattis dolor vel augue mattis varius. Cras ante odio, euismod et pellentesque vel, vehicula at libero. Sed ultrices nisi ut eros blandit porttitor.</p>
+        <a href="#">Suspendisse est metus</a>
+    </section>
+    <section>
+        <h3>Nullam faucibus ligula</h3>
+        <p>Nullam faucibus ligula vitae risus ultrices scelerisque. Ut vestibulum mollis purus, a iaculis sapien fringilla in. Quisque vulputate leo sed ex euismod, nec sagittis augue accumsan. Fusce auctor velit non vestibulum bibendum. Aenean porttitor nec urna a dictum. Vivamus diam eros, lacinia in aliquam quis, molestie nec magna. Donec feugiat tristique eros sit amet maximus. Mauris a sapien diam.</p>
+        <a href="#">sapien diam</a>
+    </section>
+</aside>
+<footer>
+    <span>&copy; Copyright 2017<wbr> Hue Mongus,<wbr> All Rights Reserved.</span>
+</footer>
+<script>
+    'use strict';
+    (() => {
+        // code . . .
+    })();
+</script>
+</body>
+</html>
